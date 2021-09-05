@@ -1,0 +1,155 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  transition: 0.4s;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+// *NAV BAR
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-img {
+  height: 50px;
+}
+
+#title {
+  text-align: center;
+  font-family: Open Sans;
+  font-weight: 600;
+  margin: 0 20px;
+}
+
+// !MODE Switch
+
+#theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+  margin: 10px 0 0 0;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #999999;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  background-image: url('/assets/light.png');
+}
+
+input:checked + .slider {
+  background-color: #2c91be;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// *FILTER CATEGORIES
+
+.categories {
+  display: flex;
+  justify-content: center;
+
+  .active {
+    background-color: #2c91be;
+  }
+  :hover {
+    background-color: #2d92be66;
+  }
+}
+.item {
+  margin: 10px;
+  padding: 2px 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+// !GRID IMAGES
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .griditems {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    box-shadow: 0 0 5px rgb(201, 201, 201);
+  }
+}
+
+.grid:hover {
+  > img {
+    filter: grayscale(1) brightness(0.8);
+  }
+
+  > img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+    z-index: 99;
+    transition: 0.4s ease-in-out;
+    border: 2px solid lightblue;
+  }
+}
+
+// *DARK MODE
+
+.dark {
+  background-color: black;
+
+  #title {
+    color: white;
+  }
+
+  .categories .item {
+    color: white;
+    border-color: white;
+  }
+
+  .griditems {
+    filter: brightness(0.8);
+  }
+}
